@@ -1,8 +1,10 @@
 import { getData } from './api.js'
+import { drawImg } from './draw.js';
 
- function  init() {
+ const  init = async()=> {
   console.log("index.html and index.js init");
-    getData()
-  
+    const now = await getData()
+    console.log("now : ", now)
+    drawImg(now.results)
 }
 init();

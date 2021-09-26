@@ -1,19 +1,12 @@
-export async function getData() {
-    const url = "https://api.themoviedb.org/3/movie/now_playing?api_key=17f63f0af9afb30432061e00d90f277a&language=ko";
-      const response =await fetch(url)
-    // console.log(response)
-    const responseJsoned = await response.json()
-    console.log(responseJsoned)
-    
-  }
+const baseUrl = "https://api.themoviedb.org/3/";
+const apiKey = "17f63f0af9afb30432061e00d90f277a";
+const language = "ko";
 
-function init() {
-    console.log('api')
-    getData()
-}
+export const getData = async () => {
+  const url = `${baseUrl}movie/now_playing?api_key=${apiKey}&language=${language}`;
+  const response = await fetch(url);
 
-export function test(a, b) {
-    console.log('test called')
-    return a+b
-}
+  const responseJsoned = await response.json();
 
+  return responseJsoned;
+};
