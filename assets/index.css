@@ -5,7 +5,13 @@
 }
 body {
   background-color: rgb(20, 20, 20);
+  /* -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
 }
+/* body::-webkit-scrollbar {
+  display: none;
+} */
+
 header {
   color: white;
   position: fixed;
@@ -44,7 +50,14 @@ a[class="poster-img"]:hover {
   cursor: pointer;
 }
 
-.poster {
+section[class="now-poster"] {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 125px);
+  gap: 25px;
+}
+section[class="upcoming-poster"] {
   margin-top: 25px;
   margin-bottom: 25px;
   display: grid;
