@@ -1,10 +1,11 @@
-import { getData } from './api.js'
-import { drawImg } from './draw.js';
+import { getNowPlaying, getUpcomingMovies } from './api.js'
+import { drawNowPlaying, drawUpcomingMovies } from './draw.js';
 
  const  init = async()=> {
-  console.log("index.html and index.js init");
-    const now = await getData()
-    console.log("now : ", now)
-    drawImg(now.results)
+    const nowPlaying = await getNowPlaying()
+    const upcomingMovies = await getUpcomingMovies()
+    
+    drawNowPlaying(nowPlaying.results)
+    drawUpcomingMovies(upcomingMovies.results)
 }
 init();
